@@ -1,0 +1,35 @@
+.first{
+    text-align: center;
+    color: blue;
+    border: 1px solid green;
+}    
+.second{
+   text-align: center;
+   color:red;
+   border: 1px solid green;
+}
+.third{
+    text-align: center;
+    color :blue;
+    border: 1px solid green;
+}
+.fourth{
+    text-align: center;
+    color:red;
+    border: 1px solid green;
+}
+div{
+    text-align: center;
+    border: 1px solid purple;
+}
+
+h1{
+    color:green;
+    display:inline-block;
+    border-bottom: 1px solid gray;  
+}
+section{
+    display: flex;
+    flex-direction: row;
+    padding:1.5rem;
+}
