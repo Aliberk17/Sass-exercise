@@ -1,0 +1,76 @@
+@use "module.scss";
+@use "module" as m;
+  
+
+.exercise{
+    border: m.$color-primary 1px solid;
+    display: flex;
+    flex-direction: column;
+    .exercise-title{
+        color:m.$color-tertiary;
+        align-self: center;
+        border-bottom: 1px m.$color-secondary solid;
+        &_secondary{
+            @extend .exercise-title;
+            padding:1rem;
+            border: 1px solid m.$color-primary;
+        }
+    }    
+}
+.sec{
+    display: flex;
+    border: 1px solid m.$color-tertiary;
+    margin: 1rem;
+    text-align: center;
+}
+
+.first, .third{
+ @include m.article-card(m.$color-secondary,m.$color-tertiary)
+}
+.second, .fourth{
+    @include m.article-card(m.$color-primary, m.$color-tertiary)
+}
+.sec-2{
+    border: 1px solid m.$color-secondary;
+ 
+}
+.fifth{
+   @include m.article-card(m.$color-tertiary,m.$color-secondary,m.rem(24px));
+   display:flex;
+   flex-grow: 1;
+   justify-content: center;
+}
+$bg-color:white;
+$font-color:black;
+.kutular{
+    display: flex;
+    justify-content: space-between;
+    border:none;
+    div{
+        width: m.rem(45px);
+        height:m.rem(45px);
+        background-color:$bg-color;
+        color:$font-color;
+        border:1px solid m.$color-primary;
+    }
+}
+$font-sizes:1rem, 2rem, 3rem;
+@each $size in $font-sizes{
+    .fs-#{$size}{
+        font-size:$size;
+    }
+}
+@for $index from 1 through 19{
+    .kutular{
+        div:nth-child(#{$index}){
+            background-color:darken($bg-color,$index*5%);
+            color:lighten($font-color,$index*5%);
+        }
+        @if $index==10{
+            div:nth-child(10){
+                background-color: m.$color-secondary;
+                color:m.$color-primary;
+            }
+        }
+    }
+}
