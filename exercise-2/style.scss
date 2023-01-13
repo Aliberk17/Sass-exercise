@@ -1,0 +1,43 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;  
+
+.exercise{
+    border: $color-primary 1px solid;
+    display: flex;
+    flex-direction: column;
+    .exercise-title{
+        color:$color-tertiary;
+        align-self: center;
+        border-bottom: 1px $color-secondary solid;
+    }    
+}
+.sec{
+    display: flex;
+    border: 1px solid $color-tertiary;
+    margin: 1rem;
+    text-align: center;
+}
+
+@mixin article-card($color, $border-color, $font-size:1rem){
+    color:$color;
+    border:1px solid $border-color;
+    font-size: $font-size;
+    padding:1rem;
+}
+.first, .third{
+ @include article-card($color-secondary,$color-tertiary)
+}
+.second, .fourth{
+    @include article-card($color-primary, $color-tertiary)
+}
+.sec-2{
+    border: 1px solid $color-secondary;
+ 
+}
+.fifth{
+   @include article-card($color-tertiary,$color-secondary,1.5rem);
+   display:flex;
+   flex-grow: 1;
+   justify-content: center;
+}
