@@ -1,35 +1,30 @@
-.first{
-    text-align: center;
-    color: blue;
-    border: 1px solid green;
-}    
-.second{
-   text-align: center;
-   color:red;
-   border: 1px solid green;
-}
-.third{
-    text-align: center;
-    color :blue;
-    border: 1px solid green;
-}
-.fourth{
-    text-align: center;
-    color:red;
-    border: 1px solid green;
-}
-div{
-    text-align: center;
-    border: 1px solid purple;
-}
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;  
 
-h1{
-    color:green;
-    display:inline-block;
-    border-bottom: 1px solid gray;  
-}
-section{
+.exercise{
+    border: $color-primary 1px solid;
     display: flex;
-    flex-direction: row;
-    padding:1.5rem;
+    flex-direction: column;
+    .exercise-title{
+        color:$color-tertiary;
+        align-self: center;
+        border-bottom: 1px $color-secondary solid;
+    }    
+}
+.cards{
+    display: flex;
+    border: 1px solid $color-tertiary;
+    margin: 1rem;
+    text-align: center;
+}
+.first, .third{
+    color: $color-secondary;
+    border: 1px solid $color-tertiary;
+    padding: 1rem;
+}
+.second, .fourth{
+    color: $color-primary;
+    border: 1px solid $color-tertiary;
+    padding: 1rem;
 }
