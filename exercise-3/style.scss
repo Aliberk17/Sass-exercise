@@ -1,0 +1,37 @@
+@use "module.scss";
+@use "module" as m;
+  
+
+.exercise{
+    border: m.$color-primary 1px solid;
+    display: flex;
+    flex-direction: column;
+    .exercise-title{
+        color:m.$color-tertiary;
+        align-self: center;
+        border-bottom: 1px m.$color-secondary solid;
+    }    
+}
+.sec{
+    display: flex;
+    border: 1px solid m.$color-tertiary;
+    margin: 1rem;
+    text-align: center;
+}
+
+.first, .third{
+ @include m.article-card(m.$color-secondary,m.$color-tertiary)
+}
+.second, .fourth{
+    @include m.article-card(m.$color-primary, m.$color-tertiary)
+}
+.sec-2{
+    border: 1px solid m.$color-secondary;
+ 
+}
+.fifth{
+   @include m.article-card(m.$color-tertiary,m.$color-secondary,m.rem(24px));
+   display:flex;
+   flex-grow: 1;
+   justify-content: center;
+}
